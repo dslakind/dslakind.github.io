@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Processor</title>
+</head>
+<body>
+
+    <h1>Input Processor</h1>
+
+    <label for="userInput">Enter Text:</label>
+    <input type="text" id="userInput" placeholder="Type something...">
+
+    <button onclick="processInput()">Process</button>
+
+    <br>
+
+    <label for="result">Result:</label>
+    <span id="resultLabel"></span>
+
+    <script>
+        function processInput() {
+            // Get user input from the textbox
+            var userInput = document.getElementById('userInput').value;
+
+            // Perform some processing (You can replace this with your own logic)
+            var processedResult = "Processed: " + userInput;
+
+            // Display the result on the label
+            document.getElementById('resultLabel').textContent = processedResult;
+        }
+    </script>
+
+</body>
+</html>
