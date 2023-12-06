@@ -1,36 +1,49 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Input Processor</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arteries Occlusion Calculator</title>
+  <script>
+    function calculatePercentage(systolicBP) {
+      const peakSystolicVelocity = 1.0578 * systolicBP + 50.46;
+
+
+      const threshold50 = 2 * 125;
+      const threshold75 = 4 * 125;
+
+
+      let percentage;
+
+
+      if (peakSystolicVelocity < threshold50) {
+        percentage = "0%-50%";
+      } else if (peakSystolicVelocity === threshold50) {
+        percentage = "50%";
+      } else if (threshold50 < peakSystolicVelocity && peakSystolicVelocity < threshold75) {
+        percentage = "50%-75%";
+      } else if (peakSystolicVelocity >= threshold75) {
+        percentage = ">= 75%";
+      } else {
+        percentage = "Unknown";
+      }
+
+
+      return percentage;
+    }
+
+
+    function calculateAndDisplay() {
+      const systolicBP = parseFloat(prompt("Enter your systolic blood pressure (mm/Hg): "));
+      const result = calculatePercentage(systolicBP);
+      alert(`Percent Occlusion in your arteries is approximately: ${result}`);
+    }
+  </script>
 </head>
 <body>
-
-    <h1>Input Processor</h1>
-
-    <label for="userInput">Enter Text:</label>
-    <input type="text" id="userInput" placeholder="Type something...">
-
-    <button onclick="processInput()">Process</button>
-
-    <br>
-
-    <label for="result">Result:</label>
-    <span id="resultLabel"></span>
-
-    <script>
-        function processInput() {
-            // Get user input from the textbox
-            var userInput = document.getElementById('userInput').value;
-
-            // Perform some processing (You can replace this with your own logic)
-            var processedResult = "Processed: " + userInput;
-
-            // Display the result on the label
-            document.getElementById('resultLabel').textContent = processedResult;
-        }
-    </script>
-
+  <h1>Arteries Occlusion Calculator</h1>
+  <button onclick="calculateAndDisplay()">Calculate Percentage</button>
 </body>
 </html>
