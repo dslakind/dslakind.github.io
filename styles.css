@@ -54,8 +54,13 @@ a:hover { color: var(--brand-2); }
   background: #0b1324; color: #e5e7eb;
 }
 .btn:hover { border-color: var(--brand); }
+html {
+  scroll-behavior: smooth;
+}
 
+/* Make anchored sections stop below the sticky nav (adjust if your nav is taller) */
 .section {
+  scroll-margin-top: 80px;
   padding: 1rem; max-width: 900px; margin: 0 auto 1rem; 
   background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.0));
   border-top: 1px solid #1f2937;
@@ -84,3 +89,4 @@ a:hover { color: var(--brand-2); }
   .avatar { margin: 0 auto; }
   .nav ul { gap: .5rem; flex-wrap: wrap; justify-content: center; }
 }
+
