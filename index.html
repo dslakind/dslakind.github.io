@@ -5,45 +5,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arteries Occlusion Calculator</title>
-  <script>
-    function calculatePercentage(systolicBP) {
-      const peakSystolicVelocity = 1.0578 * systolicBP + 50.46;
-
-
-      const threshold50 = 2 * 125;
-      const threshold75 = 4 * 125;
-
-
-      let percentage;
-
-
-      if (peakSystolicVelocity < threshold50) {
-        percentage = "0%-50%";
-      } else if (peakSystolicVelocity === threshold50) {
-        percentage = "50%";
-      } else if (threshold50 < peakSystolicVelocity && peakSystolicVelocity < threshold75) {
-        percentage = "50%-75%";
-      } else if (peakSystolicVelocity >= threshold75) {
-        percentage = ">= 75%";
-      } else {
-        percentage = "Unknown";
-      }
-
-
-      return percentage;
-    }
-
-
-    function calculateAndDisplay() {
-      const systolicBP = parseFloat(prompt("Enter your systolic blood pressure (mm/Hg): "));
-      const result = calculatePercentage(systolicBP);
-      alert(`Percent Occlusion in your arteries is approximately: ${result}`);
-    }
-  </script>
+  <title>David Lakind | Computer Science Educator</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico">
 </head>
 <body>
-  <h1>Arteries Occlusion Calculator</h1>
-  <button onclick="calculateAndDisplay()">Calculate Percentage</button>
+  <header>
+    <h1>David Lakind</h1>
+    <h2>Computer Science Instructor | AP CSA | Cybersecurity Advisor</h2>
+    <p>Educating the next generation of problem solvers through code, creativity, and curiosity.</p>
+    <a href="https://github.com/dlakind" target="_blank">View My GitHub</a>
+  </header>
+  
 </body>
 </html>
